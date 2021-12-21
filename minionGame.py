@@ -3,19 +3,18 @@ def minion_game(string):
 
     vowels = ["A", "E", "I", "O", "U"]
 
+    string = str(string)
+
     for i in range(len(string)):
-        for j in range(1, len(string) + 1):
-            substring = string[i:j]
-            if substring:
-                if substring[0] in vowels:
-                    Kevin += 1
-                else:
-                    Stuart += 1
+        if string[i] in vowels:
+            Kevin += len(string) - i
+        else:
+            Stuart += len(string) - i
 
     if Kevin > Stuart:
-        print("Kevin ", Kevin)
+        print("Kevin", Kevin)
     elif Kevin < Stuart:
-        print("Stuart ", Stuart)
+        print("Stuart", Stuart)
 
     else:
         print("Draw")
